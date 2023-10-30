@@ -7,6 +7,8 @@ type Folder struct {
 	name     string
 }
 
+var _ Inode = (*Folder)(nil)
+
 func (f *Folder) print(indentation string) {
 	fmt.Printf("%s%s\n", indentation, f.name)
 	for _, i := range f.children {

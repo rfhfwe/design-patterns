@@ -6,6 +6,8 @@ type File struct {
 	name string
 }
 
+var _ Inode = (*File)(nil)
+
 func (f *File) print(indentation string) {
 	fmt.Printf("%s%s\n", indentation, f.name)
 }
